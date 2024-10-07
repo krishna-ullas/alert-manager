@@ -1,7 +1,7 @@
 app:
     name: alertmanager
     code: alertmanager
-    notify: appz@ecloudcontrol.com
+    notify: kullas@ecloudcontrol.com
 
 build:
     version: 0.2
@@ -11,7 +11,7 @@ build:
     image_template: alertmanager-0.20
 
 deploy:
-    context: alpha/DEV
+    context: krishna-ullas/DEV
     type: statefulset
     replicas: 1
     port:
@@ -21,11 +21,13 @@ volumes:
   - claim: alertmanager-data
     mount: /appz/data
     name: data
-    size: 50Gi
+    size: 3Gi
   
 properties:
-    SLACK_API_URL:
-      vault: SLACK_API_URL
-    SLACK_CHANNEL: notification-openebs
-    CLUSTER_NAME: AWS_QA
+    SMTP_AUTH_PASSWORD:
+      vault: SMTP_AUTH_PASSWORD
+    ALERTMANAGER_SMTP_FROM: webmaster@ecloudcontrol.com
+    SMTP_SMARTHOST: mail.authsmtp.com:465
+    SMTP_AUTH_USERNAME: ac75928
+    ALERTMANAGER_EMAIL_TO: kullas@ecloudcontrol.com
     revision : 19
