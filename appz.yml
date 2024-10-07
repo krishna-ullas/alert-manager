@@ -30,4 +30,4 @@ properties:
     SMTP_SMARTHOST: mail.authsmtp.com:465
     SMTP_AUTH_USERNAME: ac75928
     ALERTMANAGER_EMAIL_TO: kullas@ecloudcontrol.com
-    revision : 19
+    revision : 20
